@@ -1,0 +1,175 @@
+/* General & Typography */
+:root {
+    --primary-color: #6a4f40; /* Terracotta-like brown */
+    --secondary-color: #d1b58a; /* Golden mustard */
+    --accent-color: #a3333d; /* Deep red */
+    --background-color: #f7f2eb; /* Creamy off-white */
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.seasonal {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+}
+
+.nav-links {
+    display: none;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    color: var(--background-color);
+    font-size: 2em;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.nav-links.active li {
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-links a {
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+/* Main Content */
+main {
+    padding: 20px 5%;
+}
+
+.hero-section {
+    background-image: url('your-hero-image.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.menu-section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links li {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        padding: 10px 15px;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .menu-category ul {
+        column-count: 2; /* For a more compact list */
+    }
+
+    .podis-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .podis-list li {
+        border-bottom: none;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
